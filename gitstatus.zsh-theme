@@ -13,7 +13,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}"
 
 function path_prompt {
-  echo $(shrink_path -f || pwd | sed -e "s,^$HOME,~,")
+  echo $(shrink_path -f 2> /dev/null || pwd | sed -e "s,^$HOME,~,")
 }
 
 function git_custom_prompt {
@@ -46,13 +46,13 @@ function git_custom_prompt {
     STATUS_SYMBOL="*"
   fi
 
-  # # is anything untracked?
+  # is anything untracked?
   if $(echo "$GIT_STATUS" | grep 'Untracked files' &> /dev/null); then
     STATUS_COLOR="$ZSH_THEME_GIT_PROMPT_UNTRACKED"
     STATUS_SYMBOL="!"
   fi
 
-  # # is anything unmerged?
+  # is anything unmerged?
   if $(echo "$GIT_STATUS" | grep -E -e 'unmerged' &> /dev/null); then
     STATUS_COLOR="$ZSH_THEME_GIT_PROMPT_UNMERGED"
     STATUS_SYMBOL="✕"
