@@ -1,10 +1,14 @@
 ## Gitstatus ZSH theme
 
-Fish-like [Gitstatus](https://github.com/oh-my-fish/theme-gitstatus) theme for ZSH. Simple is the best!
+Fish-like [gitstatus](https://github.com/oh-my-fish/theme-gitstatus) theme for ZSH. Simple is the best!
+
+![screenshot](gitstatus.png)
 
 ### Features
 
-- Show full pwd, shrink path instead of full pwd when enabling shrink path plugin:
+- Shows command return status
+- Show full pwd
+- Support Fish-like shrink path
 ```bash
 # shrink path is enabled:
 /home/kimyvgy/kimnh-0823/mayfest/docker -> ~/k/m/docker
@@ -13,4 +17,18 @@ Fish-like [Gitstatus](https://github.com/oh-my-fish/theme-gitstatus) theme for Z
 /home/kimyvgy/kimnh-0823/mayfest/docker -> ~/kimnh-0823/mayfest/docker
 ```
 - Show git status (branch, color)
-- Shows command return status
+
+### Installation
+
+- Clone this repository into `~/.oh-my-zsh/custom/themes` folder:
+```bash
+git clone https://github.com/kimyvgy/gitstatus-zsh-theme.git ${ZSH_CUSTOM}/themes/gitstatus
+```
+- Activate this theme in `~/.zshrc` file:
+```bash
+ZSH_THEME="gitstatus/gitstatus"
+```
+- Apply theme:
+```bash
+source ~/.zshrc
+```
