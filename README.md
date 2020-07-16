@@ -32,3 +32,8 @@ ZSH_THEME="gitstatus/gitstatus"
 ```bash
 source ~/.zshrc
 ```
+- Enable `shrink-path` plugin which is included in `oh-my-zsh`, you just only enable plugin:
+```bash
+# ~/.zshrc
+plugins=(shrink-path [...plugins])
+```
